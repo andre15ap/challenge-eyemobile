@@ -5,7 +5,7 @@ import COLORS from '../../config/Colors';
 import FONTS from '../../config/Fonts';
 import TEXTS from '../../config/Texts';
 
-import DeviceService from '../../Services/DeviceService';
+import DeviceService from '../../services/deviceService';
 const { width, height } = DeviceService.getScreenSize();
 
 import { HeaderRow, TextBody, ButtomBack } from './styles';

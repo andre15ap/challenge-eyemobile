@@ -1,58 +1,27 @@
-
 import React, { useEffect, useState } from 'react';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 
-import DeviceService from '../../Services/DeviceService';
+import DeviceService from '../../services/deviceService';
+import DATA from '../../services/apiService';
 const { width, height } = DeviceService.getScreenSize();
 import COLORS from  '../../config/Colors';
 import FONTS from  '../../config/Fonts';
-import ICONS from '../../assets/Icons';
 
 const SIZE = width - 40;
 const SIZE_ICON = 40.
 
-const data = [
-    
-        {
-            id: 1,
-            icon: <ICONS.MONEY width={SIZE_ICON} height={SIZE_ICON} />,
-            name: 'DINHEIRO'
-        },
-        {
-            id: 2,
-            icon: <ICONS.DEBIT width={SIZE_ICON} height={SIZE_ICON} />,
-            name: 'DÉBITO'
-        },
-        {
-            id: 3,
-            icon: <ICONS.CREDIT width={SIZE_ICON} height={SIZE_ICON} />,
-            name: 'CRÉDITO'
-        },
-        {
-            id: 4,
-            icon: <ICONS.VR width={SIZE_ICON} height={SIZE_ICON} />,
-            name: 'V.R.'
-        },
-        {
-            id: 5,
-            icon: <ICONS.CUPOM width={SIZE_ICON} height={SIZE_ICON} />,
-            name: 'CUPOM'
-        },
-];
-
 import {Container, ContainerCard, ContainerItem, TextIcon} from './styles';
 
-export default function CardBottomComponent ({click}){
+export default function FooterHomeComponent ({click}){
     const [itens, setItens] = useState([])
 
-
     useEffect(()=>{
-        //setItens(data)
+       setItens(DATA(SIZE_ICON))
     }, []);
 
 
     const renderItem = (item) =>{
-        return (
+        return item ? (
             <ContainerItem
                 onPress={() => click(item.name)}>
                 {item.icon}
@@ -60,10 +29,10 @@ export default function CardBottomComponent ({click}){
                     size={20}
                     color={COLORS.BLACK_LIGHT}
                     font={FONTS.DIN}>
-                    {item.name}
+                    {item.name.toUpperCase()}
                 </TextIcon> 
             </ContainerItem>
-        )
+        ) : null;
     }
 
 
@@ -71,22 +40,19 @@ export default function CardBottomComponent ({click}){
         <Container 
             background={COLORS.WHITE} width={SIZE}>
             <SwiperFlatList
-                //index={0}
-                // data={data}
-                // renderItem={renderItem}
                 showPagination
                 paginationDefaultColor={COLORS.GRAY_LIGHT}
                 paginationActiveColor={COLORS.PRIMARY_LIGHT} >
                 
                 <ContainerCard width={SIZE}> 
-                    {renderItem(data[0])}
-                    {renderItem(data[1])}
-                    {renderItem(data[2])}
+                    {renderItem(itens[0])}
+                    {renderItem(itens[1])}
+                    {renderItem(itens[2])}
                 </ContainerCard>
                 
                 <ContainerCard width={SIZE}> 
-                    {renderItem(data[3])}
-                    {renderItem(data[4])}
+                    {renderItem(itens[3])}
+                    {renderItem(itens[4])}
                 </ContainerCard>
            </SwiperFlatList>
                   

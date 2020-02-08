@@ -1,7 +1,7 @@
 import React from "react"
 import Svg, { Image } from "react-native-svg"
 
-function SvgComponent(props) {
+function IconDebit(props) {
   return (
     <Svg width={props.width} height={props.height} viewBox="0 0 120 120" {...props}>
       <Image
@@ -13,4 +13,4 @@ function SvgComponent(props) {
   )
 }
 
-export default SvgComponent
+export default IconDebit

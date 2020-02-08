@@ -1,7 +1,7 @@
 import React from "react"
 import Svg, { Circle, G, Path } from "react-native-svg"
 
-function SvgComponent(props) {
+function IconVr(props) {
   return (
     <Svg width={props.width} height={props.height} viewBox="0 0 120 120" {...props}>
       <Circle data-name="Oval 7" cx={60} cy={60} r={60} fill="#ff6c00" />
@@ -45,4 +45,4 @@ function SvgComponent(props) {
   )
 }
 
-export default SvgComponent
+export default IconVr

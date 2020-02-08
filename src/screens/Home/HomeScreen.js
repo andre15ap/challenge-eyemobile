@@ -2,13 +2,13 @@ import React, { useEffect, useState} from 'react';
 
 import BackgroundComponent from '../../Components/Background/BackgroundComponent';
 import COLORS from '../../config/Colors';
-import FONTS from '../../config/Fonts';
-import getDate from '../../Services/getDate';
+import getDate from '../../services/getDate';
 
-import CircleButtonComponent from '../../Components/CircleButton/CircleButtonComponent';
-import CardBottomComponent from '../../Components/CardBottom/CardBottomComponent';
+import HeaderHomeComponent from '../../Components/HeaderHome/HeaderHomeComponent';
+import BodyHomeComponent from '../../Components/BodyHome/BodyHomeComponent';
+import FooterHomeComponent from '../../Components/FooterHome/FooterHomeComponent';
 
-import { Container, ContainerBody, RowNumbers, RowTexts, TextTop } from './styles';
+import { Container, ContainerFooter } from './styles';
 
 
 export default function HomeScreen({route, navigation}){
@@ -55,7 +55,7 @@ export default function HomeScreen({route, navigation}){
     }
 
 
-    function change(value, index) {
+    function change(value) {
         let result = value;
         if(result.length > 3 && result[0] == '0'){
             result = result.slice(1);
@@ -74,69 +74,19 @@ export default function HomeScreen({route, navigation}){
         <BackgroundComponent 
             colors={[COLORS.PRIMARY, COLORS.PRIMARY_LIGHT]} >
             <Container>
+                <HeaderHomeComponent
+                    flex={2}
+                    total={maskDinner(total)} />
 
-                <ContainerBody flex={2}>
-                    <RowTexts>
-                        <TextTop 
-                            size={45}
-                            color={COLORS.WHITE}
-                            type={'normal'}
-                            font={FONTS.DIN}> 
-                            R$ 
-                        </TextTop>
-                        <TextTop 
-                            size={60}
-                            color={COLORS.WHITE}
-                            type={'normal'}
-                            font={FONTS.DIN}
-                            paddingButtom={true}> 
-                            {maskDinner(total)}
-                        </TextTop>
-                    </RowTexts>
-                    <RowTexts marginTop={1}>
-                        <TextTop 
-                            size={20}
-                            color={COLORS.WHITE}
-                            type={'normal'}
-                            font={FONTS.DIN}> 
-                            TOTAL A PAGAR
-                        </TextTop>
-                    </RowTexts>
-                </ContainerBody>
+                <BodyHomeComponent 
+                    flex={8}
+                    clickKeyboard={clickKeyboard} />
 
-                <ContainerBody flex={8}>
-                    <RowNumbers>
-                        <CircleButtonComponent click={clickKeyboard} number={1} />
-                        <CircleButtonComponent click={clickKeyboard} number={2} />
-                        <CircleButtonComponent click={clickKeyboard} number={3} />
-                    </RowNumbers>
-
-                    <RowNumbers>
-                        <CircleButtonComponent click={clickKeyboard} number={4} />
-                        <CircleButtonComponent click={clickKeyboard} number={5} />
-                        <CircleButtonComponent click={clickKeyboard} number={6} />
-                    </RowNumbers>
-
-                    <RowNumbers>
-                        <CircleButtonComponent click={clickKeyboard} number={7} />
-                        <CircleButtonComponent click={clickKeyboard} number={8} />
-                        <CircleButtonComponent click={clickKeyboard} number={9} />
-                    </RowNumbers>
-
-                    <RowNumbers>
-                        <CircleButtonComponent />
-                        <CircleButtonComponent click={clickKeyboard} number={0} />
-                        <CircleButtonComponent click={clickKeyboard} icon={true} />
-                    </RowNumbers>
-
-                </ContainerBody>
-
-                <ContainerBody flex={3}>
-                    <CardBottomComponent click={clickIcon} />
-                </ContainerBody>
+                <ContainerFooter flex={3}>
+                    <FooterHomeComponent click={clickIcon} />
+                </ContainerFooter>
 
             </Container>
-            
         </BackgroundComponent>
     )
 }

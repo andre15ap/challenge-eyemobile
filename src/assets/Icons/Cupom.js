@@ -1,7 +1,7 @@
 import React from "react"
 import Svg, { G, Circle, Path } from "react-native-svg"
 
-function SvgComponent(props) {
+function IconCupom(props) {
   return (
     <Svg width={props.width} height={props.height} viewBox="0 0 120 120" {...props}>
       <G data-name="Grupo 12">
@@ -23,4 +23,4 @@ function SvgComponent(props) {
   )
 }
 
-export default SvgComponent
+export default IconCupom;

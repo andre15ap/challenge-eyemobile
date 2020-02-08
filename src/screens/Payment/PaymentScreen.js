@@ -6,6 +6,7 @@ import HeaderPaymentComponent from '../../Components/HeaderPayment/HeaderPayment
 import BodyPaymentComponent from '../../Components/BodyPayment/BodyPaymentComponent';
 import FooterPaymentComponent from '../../Components/FooterPayment/FooterPaymentComponent';
 import ReceiptComponent from '../../Components/Receipt/ReceiptComponent';
+import MessageAlertComponent from '../../Components/MessageAlert/MessageAlertComponent';
 
 import COLORS from '../../config/Colors';
 
@@ -18,7 +19,15 @@ export default function Paymentcreen({route, navigation}){
 
     function confirm() {
         navigation.replace("Home");
+        // MessageAlertComponent(
+        //     'Confirma Fechamento',
+        //     'Deseja Confirmar o Fechamento?', 
+        //     {text:'confirmar', onPress:finsh});
     }
+
+    // function finsh(){
+    //     navigation.replace("Home");
+    // }
 
     useEffect(() => {
         const { paramType, paramValue, paramDate } = route.params;
@@ -32,7 +41,6 @@ export default function Paymentcreen({route, navigation}){
             <StatusBar backgroundColor={COLORS.SECONDARY_DARK} barStyle="light-content" />
             <Container>
                 <ReceiptComponent />
-                
                 <HeaderPaymentComponent 
                     flex={2}
                     navigation={navigation} />
@@ -46,9 +54,7 @@ export default function Paymentcreen({route, navigation}){
                 <FooterPaymentComponent 
                     flex={3}  
                     confirm={confirm} />
-                
             </Container>
-        
         </BackgroundComponent>
     )
 }

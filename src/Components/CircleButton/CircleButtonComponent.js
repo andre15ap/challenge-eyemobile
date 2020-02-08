@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from 'native-base';
 
-import DeviceService from '../../Services/DeviceService';
+import DeviceService from '../../services/deviceService';
 const { width, height } = DeviceService.getScreenSize();
 import COLORS from  '../../config/Colors';
 import FONTS from  '../../config/Fonts';

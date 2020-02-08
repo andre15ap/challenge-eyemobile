@@ -1,10 +1,9 @@
 
 import React from 'react';
-import LinearGradient from 'react-native-linear-gradient';
 import styled from 'styled-components/native';
 import Receipt from '../../assets/svgs/Receipt';
 
-import DeviceService from '../../Services/DeviceService';
+import DeviceService from '../../services/deviceService';
 const { width, height } = DeviceService.getScreenSize();
 
 const WID = width * 0.6; 

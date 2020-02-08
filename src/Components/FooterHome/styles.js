@@ -11,7 +11,6 @@ export const Container = styled.View`
 `
 
 export const ContainerCard = styled.View`
-    flex:1;
     width: ${props => props.width}px;
     height: 100%; 
     flex-direction: row;

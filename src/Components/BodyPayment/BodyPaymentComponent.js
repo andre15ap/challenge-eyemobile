@@ -5,7 +5,7 @@ import FONTS from '../../config/Fonts';
 import ICONS from '../../assets/Icons';
 import TEXTS from '../../config/Texts';
 
-import DeviceService from '../../Services/DeviceService';
+import DeviceService from '../../services/deviceService';
 const { width, height } = DeviceService.getScreenSize();
 
 const LAR = width * 0.6; 
