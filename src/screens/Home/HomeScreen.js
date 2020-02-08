@@ -1,9 +1,9 @@
 import React, { useEffect, useState} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
 
 import BackgroundComponent from '../../Components/Background/BackgroundComponent';
 import COLORS from '../../config/Colors';
 import FONTS from '../../config/Fonts';
+import getDate from '../../Services/getDate';
 
 import CircleButtonComponent from '../../Components/CircleButton/CircleButtonComponent';
 import CardBottomComponent from '../../Components/CardBottom/CardBottomComponent';
@@ -11,7 +11,7 @@ import CardBottomComponent from '../../Components/CardBottom/CardBottomComponent
 import { Container, ContainerBody, RowNumbers, RowTexts, TextTop } from './styles';
 
 
-export default function HomeScreen({navigation}){
+export default function HomeScreen({route, navigation}){
     const [total, setTotal] = useState("000");
 
     function maskDinner(val){
@@ -22,7 +22,8 @@ export default function HomeScreen({navigation}){
 
     function clickIcon(value){
         if (total !== '000'){
-            navigation.navigate('Payment', { paramType:value, paramValue: maskDinner(total)});
+            let date = getDate();
+            navigation.navigate('Payment', { paramType:value, paramValue: maskDinner(total), paramDate: date});
         }
     }
 
@@ -67,14 +68,6 @@ export default function HomeScreen({navigation}){
         newVal = change(newVal);
         return newVal;
     }
-
-    useEffect(() => {
-        const unsubscribe = navigation.addListener('focus', () => {
-          setTotal('000');
-        });
-    
-        return unsubscribe;
-      }, [navigation]);
 
 
     return (

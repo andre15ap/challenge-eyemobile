@@ -52,7 +52,6 @@ export default function CardBottomComponent ({click}){
 
 
     const renderItem = (item) =>{
-        console.log(item.name)
         return (
             <ContainerItem
                 onPress={() => click(item.name)}>
