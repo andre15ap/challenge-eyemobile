@@ -1,3 +1,3 @@
 # challenge-eyemobilegit 
 
-technical challenge for react-native Eyemobile developer.
+Technical challenge for react-native developer Eyemobile .
