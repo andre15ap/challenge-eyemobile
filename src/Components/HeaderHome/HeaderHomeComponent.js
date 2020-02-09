@@ -3,10 +3,6 @@ import { Icon } from 'native-base';
 
 import COLORS from '../../config/Colors';
 import FONTS from '../../config/Fonts';
-import TEXTS from '../../config/Texts';
-
-import DeviceService from '../../services/deviceService';
-const { width, height } = DeviceService.getScreenSize();
 
 import { ContainerBody, RowTexts, TextTop } from './styles';
 
@@ -23,7 +19,7 @@ export default function HeaderHomeComponent ({total, flex=2}){
                     R$ 
                 </TextTop>
                 <TextTop 
-                    size={60}
+                    size={62}
                     color={COLORS.WHITE}
                     type={'normal'}
                     font={FONTS.DIN}
@@ -33,7 +29,7 @@ export default function HeaderHomeComponent ({total, flex=2}){
             </RowTexts>
             <RowTexts marginTop={1}>
                 <TextTop 
-                    size={20}
+                    size={18}
                     color={COLORS.WHITE}
                     type={'normal'}
                     font={FONTS.DIN}> 

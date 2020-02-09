@@ -69,6 +69,14 @@ export default function HomeScreen({route, navigation}){
         return newVal;
     }
 
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            setTotal('000');
+        });
+    
+        return unsubscribe;
+      }, [navigation]);
+
 
     return (
         <BackgroundComponent 

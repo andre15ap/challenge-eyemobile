@@ -22,7 +22,7 @@ export default function apService(SIZE_ICON) {
             {
                 id: 4,
                 icon: <ICONS.VR width={SIZE_ICON} height={SIZE_ICON} />,
-                name: 'V.R.'
+                name: 'VR'
             },
             {
                 id: 5,

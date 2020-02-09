@@ -14,7 +14,7 @@ export const RowTexts = styled.View`
 `
 
 export const TextTop = styled.Text`
-    margin: 0 8px;
+    margin: 0 6px;
     font-size: ${props => props.size}px;
     color: ${props => props.color};
     font-weight: ${props => props.type};

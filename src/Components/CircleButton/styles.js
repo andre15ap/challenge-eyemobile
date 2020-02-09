@@ -9,7 +9,7 @@ export const BtnCircle = styled.TouchableOpacity`
     flex:1;
     padding: 5px;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-color: #fff;
     border-radius: 50px;
     align-items: center;

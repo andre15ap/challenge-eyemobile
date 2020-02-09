@@ -14,13 +14,14 @@ export default function FooterPaymentComponent ({confirm, flex=1}){
     
     return (
         <ContainerRow 
-            flex={flex}>
+            flex={flex}
+            align={'flex-end'}>
             <ButtomConfirm
                 color={COLORS.SECONDARY}
                 onPress={()=>confirm()}>
                 <TextBody
                     size={18}
-                    font={FONTS.TAHOMA}
+                    font={FONTS.DIN}
                     color={COLORS.WHITE} >
                     {TEXTS.BTN_PAYMENT}
                 </TextBody>

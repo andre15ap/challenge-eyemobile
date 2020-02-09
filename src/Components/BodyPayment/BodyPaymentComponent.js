@@ -8,15 +8,14 @@ import TEXTS from '../../config/Texts';
 import DeviceService from '../../services/deviceService';
 const { width, height } = DeviceService.getScreenSize();
 
-const LAR = width * 0.6; 
-const ALT = height * 0.6;
+const WIDTH = width * 0.6; 
 
 import { ContainerBody, ContainerRow, TextBody } from './styles';
 
 export default function BodyPaymentComponent ({date, type, value, flex=1}){
     return (
         <ContainerBody 
-            max={LAR} 
+            max={WIDTH} 
             flex={flex}>   
 
             <ContainerRow flex={2}>             

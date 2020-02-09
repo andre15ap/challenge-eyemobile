@@ -16,8 +16,8 @@ export const TextBody = styled.Text`
 `;
 
 export const ButtomConfirm = styled.TouchableOpacity`
- padding: 15px 25px;
- margin-top: 10px;
+ padding: 15px 40px;
+ margin-bottom: 5px;
  border-radius: 50px;
  align-items: center;
  justify-content: center;

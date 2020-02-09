@@ -8,7 +8,7 @@ import TEXTS from '../../config/Texts';
 import DeviceService from '../../services/deviceService';
 const { width, height } = DeviceService.getScreenSize();
 
-import { HeaderRow, TextBody, ButtomBack } from './styles';
+import { HeaderRow, TextHeader, ButtomBack } from './styles';
 
 export default function HeaderPaymentComponent ({navigation, flex=1}){
     function click(){
@@ -28,12 +28,13 @@ export default function HeaderPaymentComponent ({navigation, flex=1}){
                     name="ios-arrow-back" />
             </ButtomBack>
             
-            <TextBody
+            <TextHeader
                 size={20}
                 font={FONTS.DIN}
-                color={COLORS.WHITE}>
+                color={COLORS.WHITE}
+                width={width}>
                 {TEXTS.HEADER}
-            </TextBody>
+            </TextHeader>
         </HeaderRow>
     )
 }

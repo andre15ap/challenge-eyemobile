@@ -8,7 +8,7 @@ import COLORS from  '../../config/Colors';
 import FONTS from  '../../config/Fonts';
 
 const SIZE = width - 40;
-const SIZE_ICON = 40.
+const SIZE_ICON = 35;
 
 import {Container, ContainerCard, ContainerItem, TextIcon} from './styles';
 

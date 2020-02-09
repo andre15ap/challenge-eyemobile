@@ -12,20 +12,23 @@ export const HeaderRow = styled.View`
 
 export const ButtomBack = styled.TouchableOpacity`
    flex:1;
+   z-index:2;
    justify-content: center;
    align-items: flex-start;
    padding: 5px 0;
    width: 100%;
-  
 `;
 
 
-export const TextBody = styled.Text`
-   flex:9;
+export const TextHeader = styled.Text`
+   /* flex:9; */
+   z-index: 1;
    padding: 5px 0;
    font-family: ${props => props.font};
    font-size: ${props => props.size || 15}px;
    color: ${props => props.color || '#fff'};
-   justify-content: flex-start;
-  
+   justify-content: center;
+   text-align: center;
+   width:100%;
+   position: absolute;
 `;
