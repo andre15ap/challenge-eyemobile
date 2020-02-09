@@ -1,14 +1,17 @@
 import React from "react"
-import Svg, { Image } from "react-native-svg"
+import Svg, { G, Circle, Path } from "react-native-svg"
 
 function IconDebit(props) {
   return (
-    <Svg width={props.width} height={props.height} viewBox="0 0 120 120" {...props}>
-      <Image
-        width={120}
-        height={120}
-        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABzlBMVEX////5+/7e6/rD2vWn yfGLuOx4rOlrpOddnOVWl+RRlONKkOKoyfH5/P7+///g7Pqy0PODs+thnuZLkeKEtOvh7frv9fy3 0/OItuxamuW30/T6/P7I3faGtexOkuNMkeJ6ruq81vT4+/7Y5/mSvO1Vl+SSvO7Z6PnU5fiAset0 qunP4fdyqOhtpejV5fhupujX5vny9/2YwO9LkOKMuO3w9v1YmeSwz/L+/v/p8vtzqel1qunq8vxX mOT8/f+kx/D7/P5wqOjr8/zi7fpfneVcm+Xf6/rZ5/lTlePK3/e/2PVNkuLB2fXK3vZSleNQlONe nOX7/f5yqeiZwe+dw+/H3fZ2q+m20vO51PTx9v2Puu2Tve5wp+jM4PfP4vfS5Ph7ruqUve5amuTd 6vr3+v7c6vlZmeTE2/Z/sev2+f71+f2Csuv0+P2lyPHc6flUluT2+v7X5/mtzfJgneZin+ary/HC 2vWmyfGoyvGNue13rOl6repqpOdspeeexPB5reqpyvHF2/auzfJbmuXb6fmFtOtOk+OVvu58r+rR 4/jU5PjN4feQu+271fScwu+fxPDt9Pzl7/vj7vrW5vhTluPL3/fj7vvs8/zz+P240/QM9DRHAAAA AWJLR0QAiAUdSAAAAAlwSFlzAAAASAAAAEgARslrPgAAAAd0SU1FB+QCBwsTCit534AAAARmSURB VGjexdv3WxMxGAfwQMs4Ii2llVEKVctQKAhUsQoFxQoOVnEi4EAFUXGBMuq2gFvc+t961wFtufdW ksv319yTz9O7XFZzCOlNTq7FmpdfUCgUYVwkFBbk5+2w5BbrrkZXbPYSR6kTy8RZ6irZyUgtK6+o xIqprHCX0VarPNU1WEO8u3bvocj6auu0qInU1TdQYvfu064m0uihwDb59bJSmi02Mral2QgrZX8r AdvW7jTqYhw4cNAga9vdYZyVIhwKGnEPHyFjpXR26Xc9IXJXfLcsOtnuHoKnm55A+1E9btcxOqwU f69293iYnovxiT6tbj9ha86O0KLNbTpJ1xWH7VNa3NNnaLsY1wyou4MMXFFW/c2+IRYuxsMqz9lO pduQS+i4kts1wsrFOKzwPkdG2bkYHzsKwmdZuhifAxt0gC0cOA88YGYNKxXhsJwbpDD+quWC3Ezs InsX40vb3TbKI4N8QmPb4MtmuBiPZ7stjFt0Ks7WTNdmeP6sNxOZsMcsF+PJDNiEVymV0XT3inku xlfT4Hwz4Wtbrs9MF+Ot9XOtufD1lFusY71PI0JVEh6Ar5my3riJDOTmLes0XOtM8qrb4BXVs0bU RO64wGrvJq4oA/dzqon2E4KgXJMYKsrB+0zwe6XcAwc8d7y8Aiq2krkIzUE1u6RSG7hfl0sK34dq fhARS+1gG3hICs+CVT8SS0vAUlIXIbDqx2KhgwfsEAvnecALCOXAuyxPiANW7SxGuZhL7OgpH3gG LfKBl1AeH3gZrfCBo+gZH/g5KoQLXxAHrjuMFKY9DDsQLKBhPnAR8vKBvfxgbreaW+Mq5AOHUQEf uBm95ANfUxokWMLLyMoHfoUsfODXSlMflrBdabLHEBYne9ymt8jFA5Ym9FyWMG+Q0qKNcHksLpDB qvvFUttbqPQGKRyDao4vU+GF+SIp3APVvBovdkPF03cI7zS4FZHYqIc3X1yGDhekEgQXwGvJfXr4 ZIvrHsHvhRfejuQlCuu2jrmYobY9G5tT+DPpdfIqbluKqN5ceH3zxjSYC8e2HknUTPddWlt4byb8 Ib0VNprnHslo/oPmwR8zYNt+s1x/1hvfQOlQkVqcvuy+5pM58Hq2a9bfuG3bu1c3ebXq+SzTrwc7 2bsrsn9y9DK/2SHgCN8p1scxwAOqX9jCX8Hhu5tpz+mPwBOHXqqH9TIzv4EU8m2KldvxHSmmn/qB vUSKfiCVNK2xcGsm1VyEBjSdWdfpajgsKP7mn7TdoV9aXHGInCa30hNSfb6p0D0CO/9bqyu+zxQP 7zVuaHepHnOO6HGlJlZJrordhqZTt5npukDurvzR70qH9wn7z5Cxw/ti/rZ7jbOBA2MGWSm+CaOu n/SLmL1RI2yjh/CTlDit/yOcJnI1noZxQUeTWo+Ri5up8lRrGi4pf2gVz5jb9UBZrVv910buyCXS +tixINuXehccbx51s1E373qfZWk5WjAiiMP2TyH8PLq8NGOv0l3Nf1t6KStZbhcdAAAAJXRFWHRk YXRlOmNyZWF0ZQAyMDIwLTAyLTA3VDE4OjE5OjEwLTA3OjAw+GKFXQAAACV0RVh0ZGF0ZTptb2Rp ZnkAMjAyMC0wMi0wN1QxODoxOToxMC0wNzowMIk/PeEAAAAASUVORK5CYII="
-      />
+    <Svg width={props.width || 120} height={props.height || 120} viewBox="0 0 120 120" {...props}>
+      <G data-name="ic_debit">
+        <Circle data-name="Oval 7" cx={60} cy={60} r={60} fill="#4a90e2" />
+        <Path
+          data-name="Combined Shape"
+          d="M86 81H34a7.008 7.008 0 01-7-7V56.5h66V74a7.008 7.008 0 01-7 7zm7-31.5H27V46a7.008 7.008 0 017-7h52a7.008 7.008 0 017 7v3.5z"
+          fill="#fff"
+        />
+      </G>
     </Svg>
   )
 }

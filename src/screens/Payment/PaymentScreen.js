@@ -18,16 +18,8 @@ export default function Paymentcreen({route, navigation}){
     const [date, setDate] = useState('');
 
     function confirm() {
-        navigation.replace("Home");
-        // MessageAlertComponent(
-        //     'Confirma Fechamento',
-        //     'Deseja Confirmar o Fechamento?', 
-        //     {text:'confirmar', onPress:finsh});
+        navigation.navigate("Home");
     }
-
-    // function finsh(){
-    //     navigation.replace("Home");
-    // }
 
     useEffect(() => {
         const { paramType, paramValue, paramDate } = route.params;
