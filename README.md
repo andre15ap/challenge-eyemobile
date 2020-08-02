@@ -1,3 +1,13 @@
 # challenge-eyemobilegit 
 
-Technical challenge for react-native developer Eyemobile .
+Project develop with react-native and styled-components
+
+### install dependences
+```
+yarn
+```
+
+### run develop mode
+```
+yarn android
+```
